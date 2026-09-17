@@ -3,8 +3,10 @@
 @use 'mixins' as *;;
 
 .product {
+    max-width: 1200px;
     display: grid;
     grid-template-columns: auto 1fr;
+     margin-inline: auto;
 
     @media (max-width: 375px) {
         display: flex;
@@ -115,7 +117,7 @@
         @include transition;
 
         &:hover {
-            border-color: $green;
+            border-color: $red;
         }
     }
 

@@ -59,7 +59,12 @@ function createVariants(packages) {
 }
 
 function applyVariant(package) {
-  article.textContent  = 'Арт. ' + package.article;
-  oldPrice.textContent = package.oldPrice;
-  newPrice.textContent = package.newPrice;
+    article.textContent  = 'Арт. ' + package.article;
+
+    if (package.oldPrice) {
+        oldPrice.textContent = package.oldPrice;
+    } else {
+        oldPrice.classList.add('hidden');
+    }
+    newPrice.textContent = package.newPrice;
 }
