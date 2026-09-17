@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: $f-14;
+    line-height: 2;
+    color: $main;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}

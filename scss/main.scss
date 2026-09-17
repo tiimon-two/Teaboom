@@ -1,0 +1,148 @@
+@use 'variables' as *;
+@use 'base';
+@use 'mixins' as *;;
+
+.product {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    &__media {
+        grid-column: 1 / 2;
+    }
+
+    &__body {
+        grid-column: 2 / -1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__info {
+        margin-bottom: $m-20;
+    }
+
+    &__category {
+        margin-right: $m-10;
+        color: $second;
+    }
+
+    &__article {
+        color: $second;
+    }
+
+    &__packaging-form {
+        width: fit-content;
+        margin-bottom: $m-20;
+    }
+
+    &__packaging {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    &__packaging-legend {
+        margin-bottom: $m-10;
+        font-weight: 500;
+    }
+
+    &__packaging-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: $g-20;
+    }
+
+    &__packaging-item {
+        padding: $p-10;
+        font-weight: 500;
+        background-color: $light;
+        border: 1px solid $main;
+        border-radius: 4px;
+        cursor: pointer;
+        @include transition();
+
+
+        &:has(.product__input:checked) {
+            border-color: $red;
+        }
+
+        &:hover {
+            border-color: $green;
+        }
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__prices {
+        width: fit-content;
+        margin-bottom: $m-10;
+        padding: $p-10;
+        border: 1px solid $main;
+        border-radius: 4px;
+    }
+
+    &__price {
+        font-size: $f-18;
+
+        &--new {
+            color: $red;
+        }
+
+        &--old {
+            text-decoration: line-through;
+        }
+    }
+
+    &__btn-add {
+        width: 80px;
+        height: 40px;
+        margin-bottom: $m-30;
+        background-color: $green;
+        border: 1px solid $main;
+        border-radius: 4px;
+        cursor: pointer;
+        @include transition;
+
+        &:hover {
+            border-color: $green;
+        }
+    }
+
+    &__cart {
+        vertical-align: middle;
+    }
+
+    &__description {
+        max-width: 800px;
+        padding: $p-10;
+        border: 1px solid $main;
+        border-radius: 4px;
+        background-color: $light;
+    }
+
+    &__properties {
+        display: flex;
+        flex-direction: column;
+        gap: $g-10;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__property {
+        position: relative;
+        padding-left: $p-15;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 8px;
+            height: 8px;
+            top: 11px;
+            left: 4px;
+            background-color: $second;
+            border-radius: 50%;
+        }
+    }
+}

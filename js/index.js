@@ -27,8 +27,8 @@ const packaging = [
 
 const packagingList = document.querySelector('.product__packaging-list');
 const article = document.querySelector('.product__article');
-const oldPrice = document.querySelector('.product__old-price');
-const newPrice = document.querySelector('.product__new-price');
+const oldPrice = document.querySelector('.product__price--old');
+const newPrice = document.querySelector('.product__price--new');
 
 createVariants(packaging);
 
@@ -59,7 +59,7 @@ function createVariants(packages) {
 }
 
 function applyVariant(package) {
-  article.textContent  = package.article;
+  article.textContent  = 'Арт. ' + package.article;
   oldPrice.textContent = package.oldPrice;
   newPrice.textContent = package.newPrice;
 }
