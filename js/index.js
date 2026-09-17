@@ -30,28 +30,32 @@ const article = document.querySelector('.product__article');
 const oldPrice = document.querySelector('.product__old-price');
 const newPrice = document.querySelector('.product__new-price');
 
-packaging.forEach ((package, i) => {
-    const newPackage = document.createElement('label');
-    newPackage.classList.add('product__packaging-item');
-    const text = document.createElement('span');
-    text.textContent = package.weight;
-    newPackage.appendChild(text);
+createVariants(packaging);
 
-    const input = document.createElement('input');
-    input.className = 'product__input';
-    input.type = 'radio';
-    input.name = 'weight';
-    input.value = package.weight;
-    input.checked = i === 0;
+function createVariants(packages) {
+    packages.forEach ((package, i) => {
+        const newPackage = document.createElement('label');
+        newPackage.classList.add('product__packaging-item');
+        const text = document.createElement('span');
+        text.textContent = package.weight;
+        newPackage.appendChild(text);
 
-    input.addEventListener('change', () => applyVariant(package));
+        const input = document.createElement('input');
+        input.className = 'product__input';
+        input.type = 'radio';
+        input.name = 'weight';
+        input.value = package.weight;
+        input.checked = i === 0;
 
-    newPackage.appendChild(input);
-    packagingList.appendChild(newPackage);
-});
+        input.addEventListener('change', () => applyVariant(package));
 
-if (packaging[0]) {
-    applyVariant(packaging[0]);
+        newPackage.appendChild(input);
+        packagingList.appendChild(newPackage);
+    });
+
+    if (packages[0]) {
+        applyVariant(packages[0]);
+    }
 }
 
 function applyVariant(package) {
