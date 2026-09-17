@@ -1,0 +1,11 @@
+{
+  "name": "Тестовое задание Кассиопея",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "scss": "sass --watch scss:styles"
+  },
+  "devDependencies": {
+    "sass": "^1.104.1"
+  }
+}
