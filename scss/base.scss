@@ -2,11 +2,47 @@
 
 body {
     font-family: "Open Sans", sans-serif;
-    font-size: $f-14;
+    font-size: var(--fs-md);
     line-height: 2;
     color: $main;
 }
 
 h1, h2, h3 {
     margin-top: 0;
+}
+
+:root {
+    --gap-lg: #{$gap-lg};
+    --gap-sm: #{$gap-sm};
+    --pad-md: #{$pad-md};
+    --pad-sm: #{$pad-sm};
+    --mar-lg: #{$mar-lg};
+    --mar-md: #{$mar-md};
+    --mar-sm: #{$mar-sm};
+    --fs-lg:  #{$fs-lg};
+    --fs-md:  #{$fs-md};
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gap-lg: 15px;
+    --gap-sm: 8px;
+    --pad-sm: 8px;
+    --mar-lg: 25px;
+    --mar-md: 15px;
+    --mar-sm: 8px;
+    --fs-lg:  16px;
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --gap-lg: 10px;
+    --gap-sm: 5px;
+    --pad-sm: 5px;
+    --mar-lg: 15px;
+    --mar-md: 10px;
+    --mar-sm: 5px;
+    --fs-md: 12ps;
+  }
 }
